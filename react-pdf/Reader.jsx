@@ -23,7 +23,7 @@ setOptions({
 class Reader extends Component {
   state = {
     numPages: null,
-    currentPage: 1,
+    currentPage: 3,
     scale: 0.75,
   }
 
@@ -31,7 +31,7 @@ class Reader extends Component {
 
   // my phone had render issues if I went higher than this. I think it had to do with the supported font size on the WebView.
 
-  MAX_SCALE = 2; 
+  MAX_SCALE = 2;
   __zoomEvent = false;
 
   onDocumentLoadSuccess = ({ numPages }) => {
@@ -107,7 +107,7 @@ class Reader extends Component {
   }
 
   renderPage = (pageNumber) => (
-    /* 
+    /*
     rendering a page and not an image let's us zoom in with better quality results.
     If size of PDFs is a concern, React PDF naturally only renders one <Page /> at a time.
     Handling quick fingered zooms from users is done through the onRenderSuccess
